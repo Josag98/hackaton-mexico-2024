@@ -52,6 +52,7 @@ import { AuthModule } from './auth/auth.module';
           encrypt: false,
         },
         relationLoadStrategy: 'query',
+        ssl: configService.get('ssl') === 'true',
       }),
       dataSourceFactory: async (options) => {
         const dataSource = await new DataSource(options).initialize();
